@@ -1,0 +1,388 @@
+<style type="text/css">
+
+    /*css goes here*/
+
+    body {
+        width:750px;
+        margin:20px auto;
+        font-family:georgia;
+    }
+    .ms-hilight {
+      background-color: #8856a7;
+    }
+
+</style>
+
+<h1>Where do guns in Chicago come from?</h1>
+
+<!DOCTYPE html>
+<html>
+  <head>
+  <style>
+    #map-canvas { width:700px; height:400px; }
+    .layer-wizard-search-label { font-family: sans-serif };
+  </style>
+  <script type="text/javascript"
+    src="http://maps.google.com/maps/api/js?sensor=false">
+  </script>
+  <script type="text/javascript">
+    var map;
+    var layer_0;
+    function initialize() {
+      map = new google.maps.Map(document.getElementById('map-canvas'), {
+        center: new google.maps.LatLng(38.17172456863782, -97.25675312499999),
+        zoom: 4
+      });
+      var style = [
+        {
+          featureType: 'all',
+          elementType: 'all',
+          stylers: [
+            { saturation: -99 }
+          ]
+        }
+      ];
+      var styledMapType = new google.maps.StyledMapType(style, {
+        map: map,
+        name: 'Styled Map'
+      });
+      map.mapTypes.set('map-style', styledMapType);
+      map.setMapTypeId('map-style');
+      layer_0 = new google.maps.FusionTablesLayer({
+        query: {
+          select: "col3>>0",
+          from: "1U2lQ5jxNpJQYRLVrY_MoqN3U_BULSckm4ksxMZXK"
+        },
+        map: map,
+        styleId: 2,
+        templateId: 2
+      });
+    }
+    function changeMap_0() {
+      var whereClause;
+      var searchString = document.getElementById('search-string_0').value.replace(/'/g, "\\'");
+      if (searchString != '--Select--') {
+        whereClause = "'name' = '" + searchString + "'";
+      }
+      layer_0.setOptions({
+        query: {
+          select: "col3>>0",
+          from: "1U2lQ5jxNpJQYRLVrY_MoqN3U_BULSckm4ksxMZXK",
+          where: whereClause
+        }
+      });
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
+  </head>
+  <body>
+    <div id="map-canvas"></div>
+    <div style="margin-top: 10px;">
+      <label class="layer-wizard-search-label">
+        State
+        <select id="search-string_0" onchange="changeMap_0(this.value);">
+          <option value="--Select--">--Select--</option>
+          <option value="Alabama">Alabama</option>
+          <option value="Alaska">Alaska</option>
+          <option value="American Samoa">American Samoa</option>
+          <option value="Arizona">Arizona</option>
+          <option value="Arkansas">Arkansas</option>
+          <option value="California">California</option>
+          <option value="Colorado">Colorado</option>
+          <option value="Commonwealth of the Northern Mariana Islands">Commonwealth of the Northern Mariana Islands</option>
+          <option value="Connecticut">Connecticut</option>
+          <option value="Delaware">Delaware</option>
+          <option value="District of Columbia">District of Columbia</option>
+          <option value="Florida">Florida</option>
+          <option value="Georgia">Georgia</option>
+          <option value="Guam">Guam</option>
+          <option value="Hawaii">Hawaii</option>
+          <option value="Idaho">Idaho</option>
+          <option value="Illinois">Illinois</option>
+          <option value="Indiana">Indiana</option>
+          <option value="Iowa">Iowa</option>
+          <option value="Kansas">Kansas</option>
+          <option value="Kentucky">Kentucky</option>
+          <option value="Louisiana">Louisiana</option>
+          <option value="Maine">Maine</option>
+          <option value="Maryland">Maryland</option>
+          <option value="Massachusetts">Massachusetts</option>
+          <option value="Michigan">Michigan</option>
+          <option value="Minnesota">Minnesota</option>
+          <option value="Mississippi">Mississippi</option>
+          <option value="Missouri">Missouri</option>
+          <option value="Montana">Montana</option>
+          <option value="Nebraska">Nebraska</option>
+          <option value="Nevada">Nevada</option>
+          <option value="New Hampshire">New Hampshire</option>
+          <option value="New Jersey">New Jersey</option>
+          <option value="New Mexico">New Mexico</option>
+          <option value="New York">New York</option>
+          <option value="North Carolina">North Carolina</option>
+          <option value="North Dakota">North Dakota</option>
+          <option value="Ohio">Ohio</option>
+          <option value="Oklahoma">Oklahoma</option>
+          <option value="Oregon">Oregon</option>
+          <option value="Pennsylvania">Pennsylvania</option>
+          <option value="Puerto Rico">Puerto Rico</option>
+          <option value="Rhode Island">Rhode Island</option>
+          <option value="South Carolina">South Carolina</option>
+          <option value="South Dakota">South Dakota</option>
+          <option value="Tennessee">Tennessee</option>
+          <option value="Texas">Texas</option>
+          <option value="Utah">Utah</option>
+          <option value="Vermont">Vermont</option>
+          <option value="Virgin Islands of the United States">Virgin Islands of the United States</option>
+          <option value="Virginia">Virginia</option>
+          <option value="Washington">Washington</option>
+          <option value="West Virginia">West Virginia</option>
+          <option value="Wisconsin">Wisconsin</option>
+          <option value="Wyoming">Wyoming</option>
+        </select>
+      </label> 
+    </div>
+  </body>
+</html>
+
+<p class="readout">It's illegal to buy a gun in Chicago, yet the city has one of the highest murder rates in the country. Where are these guns coming from?</p>
+
+<table style="width:300px">
+  <style>
+table,th,td
+{
+border:1px solid black;
+}
+</style>
+<table>
+  <thead>
+    <tr class="firstRow">
+      <th class="Illinois-cell">State Name</th>
+      <th class="22051-cell">Number of Guns</th>
+  </thead>
+  <tbody>
+      <tr>
+      <td class="Illinois-cell">Illinois</td>
+      <td class="22051-cell">22051</td>
+    </tr>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Indiana</td>
+      <td class="22051-cell">7747</td>
+    </tr>
+    <tr class="ms-hilight">
+      <td class="Illinois-cell">Mississippi</td>
+      <td class="22051-cell">4296</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Wisconsin</td>
+      <td class="22051-cell">1647</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Kentucky</td>
+      <td class="22051-cell">1226</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Ohio</td>
+      <td class="22051-cell">1121</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Tennessee</td>
+      <td class="22051-cell">1090</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Alabama</td>
+      <td class="22051-cell">1070</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Arkansas</td>
+      <td class="22051-cell">944</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Texas</td>
+      <td class="22051-cell">937</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Georgia</td>
+      <td class="22051-cell">933</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Michigan</td>
+      <td class="22051-cell">679</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Florida</td>
+      <td class="22051-cell">673</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Louisiana</td>
+      <td class="22051-cell">529</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">California</td>
+      <td class="22051-cell">526</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Minnesota</td>
+      <td class="22051-cell">474</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Iowa</td>
+      <td class="22051-cell">397</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Arizona</td>
+      <td class="22051-cell">355</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Missouri</td>
+      <td class="22051-cell">344</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">North Carolina</td>
+      <td class="22051-cell">295</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Virginia</td>
+      <td class="22051-cell">269</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Oklahoma</td>
+      <td class="22051-cell">207</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">West Virginia</td>
+      <td class="22051-cell">202</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Colorado</td>
+      <td class="22051-cell">187</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Pennsylvania</td>
+      <td class="22051-cell">181</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Kansas</td>
+      <td class="22051-cell">177</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Washington</td>
+      <td class="22051-cell">156</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">South Carolina</td>
+      <td class="22051-cell">152</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Massachusetts</td>
+      <td class="22051-cell">108</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Nebraska</td>
+      <td class="22051-cell">104</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Nevada</td>
+      <td class="22051-cell">103</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">New York</td>
+      <td class="22051-cell">97</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">New Mexico</td>
+      <td class="22051-cell">75</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Utah</td>
+      <td class="22051-cell">53</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Montana</td>
+      <td class="22051-cell">53</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Maryland</td>
+      <td class="22051-cell">50</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Connecticut</td>
+      <td class="22051-cell">46</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Oregon</td>
+      <td class="22051-cell">40</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Idaho</td>
+      <td class="22051-cell">39</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">South Dakota</td>
+      <td class="22051-cell">36</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Alaska</td>
+      <td class="22051-cell">33</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">North Dakota</td>
+      <td class="22051-cell">31</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Wyoming</td>
+      <td class="22051-cell">29</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">New Jersey</td>
+      <td class="22051-cell">21</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Maine</td>
+      <td class="22051-cell">18</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">New Hampshire</td>
+      <td class="22051-cell">14</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Delaware</td>
+      <td class="22051-cell">10</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Hawaii</td>
+      <td class="22051-cell">8</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Rhode Island</td>
+      <td class="22051-cell">5</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">Vermont</td>
+      <td class="22051-cell">4</td>
+    </tr>
+    <tr>
+      <td class="Illinois-cell">District of Columbia</td>
+      <td class="22051-cell">2</td>
+    </tr>
+  </tbody>
+</table>
+</tr>
+
+
+
+</table></p>
+
+<div class="map-section">
+<!-- map work to go in here -->
+</div>
+
+<div class="table-section">
+<!-- map work to go in here -->
+</div>
+
+<script type="text/javascript">
+
+    // javascript goes here.
+
+</script>
